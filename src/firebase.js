@@ -1,20 +1,22 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+// Import the functions you need from the Firebase SDK
+import { initializeApp } from 'firebase/app';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
+// Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCcPSKlYtpdzBoAC8soeSmIARMzVKzrf5I",
-  authDomain: "challenge-4b2b2.firebaseapp.com",
-  databaseURL: "https://challenge-4b2b2.firebaseio.com",
-  projectId: "challenge-4b2b2",
-  storageBucket: "challenge-4b2b2.appspot.com",
-  messagingSenderId: "962418448875",
-  appId: "1:962418448875:web:f6cce5eeaf819481f661ae",
+  apiKey: "AIzaSyDwxAb-3q9SbHm78_Dz1724TnbsmbZDIas",
+  authDomain: "clone-ba62a.firebaseapp.com",
+  projectId: "clone-ba62a",
+  storageBucket: "clone-ba62a.appspot.com",
+  messagingSenderId: "21851696233",
+  appId: "1:21851696233:web:bf86bf720e575d6b9546f8",
+  measurementId: "G-M0GH8NJQK5"
 };
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-const db = firebaseApp.firestore();
-const auth = firebase.auth();
-
-export { db, auth };
+export { auth, db };
